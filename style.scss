@@ -193,7 +193,6 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 800;
@@ -207,11 +206,19 @@ img {
 .site-description {
   margin: -5px 0 0 0;
   color: $gray;
-  font-size: 16px;
 
   @include mobile {
     margin: 3px 0;
   }
+
+
+  font-family: $helveticaNeue;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 nav {
