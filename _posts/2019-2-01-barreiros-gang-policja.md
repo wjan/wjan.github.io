@@ -1,3 +1,8 @@
+---
+layout: post
+title: Jak brazylijska policja rozprawiła się z gangiem z północy?
+---
+
 Barreiros, Pernambuco. Północny-wschód Brazylii, jeden z najbardziej biednych regionów kraju, gdzie lato trwa cały rok, a kolonialna historia i tradycje kultywacji trzciny cukrowej kontynuowane są do dzisiaj.
 
 Niecałe pół godziny drogi od wybrzeża, przepięknych plaż Maragogi i Japaratinga znajduje się niepozorna i skrywająca mroczną historię miejscowość.
