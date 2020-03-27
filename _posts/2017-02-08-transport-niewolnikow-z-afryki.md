@@ -1,0 +1,1 @@
+<a href="http://www.trzyameryki.pl/wp-content/uploads/2017/09/AV5WRNZ.jpg"><img src="http://www.trzyameryki.pl/wp-content/uploads/2017/09/AV5WRNZ-1024x654.jpg" alt="" width="1024" height="654" class="aligncenter size-large wp-image-7572" /></a>
