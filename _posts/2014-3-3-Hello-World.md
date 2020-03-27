@@ -1,10 +1,12 @@
 ---
 layout: post
-title: You're up and running!
+title: Rachunek rewolucji
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+Moja pierwsza podróż po Kubie przypadła na styczeń 2020. Miejcie to na uwadze, bo piszę to, gdyż sytuacja na wyspie zmienia się w sposób dynamiczny i opisywanie niektórych aspektów życia na Kubie może po prostu nie mieć sensu - w momencie gdy czytacie te słowa może minąć rok albo pięć od mojej podróży, a realia kubańskiego życia codziennego mogą się już różnić. Z mojej krótkiej podróży po Kubie udało mi się jednak wywnioskować prawdę która najprawdopodobniej utrzyma się dłużej niż pięć, a nawet dziesięć lat. Przybywszy na wyspę z naiwnym przekonaniem, że śmierć Fidela Castro i niedawne odejście od władzy jego brata, Raula, spowoduje rychłe przestawienie sterów karaibskiego statku z absurdalnego lewa o 180 stopni w prawo. Szybko jednak na własne oczy przekonałem się, że obiegowa opinia nie może być prawdziwa, a przed Kubą jeszcze daleka droga na otwarcie dla świata.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+O ile faktem powszechnie znanym i powtarzanym jest, że Kuba jest wyspą komunistyczna to jednak mało kto, kto nigdy na wyspie nie był nie jest w stanie tak naprawdę jasno sprecyzować czym ów kubański komunizm jest i na czym tak naprawdę on polega. W moich publikacjach postaram przekazać się sposób działania systemu.
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+Z mojego punktu widzenia obecny stan na wyspie wskazuje na to, że komunizm został na Kubie zaszczepiony tak głęboko i permanentnie, że jego zasadnicza systemu może odbyć się tylko przy użyciu przemocy lub sprzyjających sił trzecich. Kurs rozpędzonego statku może być nieznacznie modyfikowany, jednak jego całkowite odwrócenie to proces na dziesiątki lat, co tak naprawdę nie jest wcale pewne. Jednym z namacalnych dowodów jest nieudana próba otwarcia wyspy na Stany Zjednoczone na przełomie lat 2016/2017. Po krótkiej fali euforii, kiedy mocno trzymający się na nogach reżim komunistyczny spotkał się z twardą prezydenturą Trumpa, przyszedł czas rozczarowania i ponownej stagnacji.
+
+O tym, że Kuba jeszcze nie prędko dołączy do kapitalistycznych (albo chociaż pseudo kapitalistycznych) latynoamerykańskich braci skłoniły mnie obserwacje państwa kubańskiego i absurdalny poziom ingerencji władz w sposób funkcjonowania gospodarki i życie codzienne. O ile przesdsiębiorczość na wyspie istnieje (i to pewnie w dużo większym stopniu, niż w latach poprzednich, a przynajmniej w legalnej oficjalnej formie) to jednak państwo go nie wspiera, a tak naprawdę można by rzec, że na nim żeruje. Powiedzenie "trzymaj lód nienajedzony, tak aby był cały czas zajęty szukaniem jedzenia i nie miał siły na protesty" jest na Kubie jak najbardziej aktualne. Nie mając w tym osobistego interesu postanowiłem rewolucji zatem wystawić rachunek. Obiektywny i matematyczny, jak tylko rachunek 
