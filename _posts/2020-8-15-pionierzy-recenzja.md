@@ -1,6 +1,6 @@
 ---
 layout: post
-title: \"Pionierzy, ludzie którzy zbudowali Amerykę\" - recenzja książki
+title: "Pionierzy, ludzie którzy zbudowali Amerykę" - recenzja książki
 ---
 
 W tym miesiącu na polskim rynku wydawniczym ukazała się kolejna książka dotycząca historii Stanów Zjednoczonych. Tym razem Wydawnictwo Poznańskie zaserwowało nam szczegółowy zapis historii pierwszych osadników stanu Ohio, które pod koniec XVIII wieku w wyniku uzyskania przez Stany Zjednoczone niepodległości otworzyło się na zasiedlenie.
