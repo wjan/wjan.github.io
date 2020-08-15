@@ -1,3 +1,7 @@
+---
+layout: post
+title: "Pionierzy, ludzie którzy zbudowali Amerykę" - recenzja książki
+---
 <strong>W tym miesiącu na polskim rynku wydawniczym ukazała się kolejna książka dotycząca historii Stanów Zjednoczonych. Tym razem Wydawnictwo Poznańskie zaserwowało nam szczegółowy zapis historii pierwszych osadników stanu Ohio, które pod koniec XVIII wieku w wyniku uzyskania przez Stany Zjednoczone niepodległości otworzyło się na zasiedlenie.</strong>
 
 <strong>Marietta</strong>, bo tak nazywa się osada, której historię opisano w książce, wyznaczona została nad rzeką Ohio, granicząc z terenami wówczas zamieszkiwanymi przez Indian, dodatkowo pochodzących z różnych plemion. Życie pionierów do łatwych nie należało, a początki osadnictwa na nowych terenach przypominały życie pierwszych osadników, którzy przybywali na wschodnie wybrzeże jeszcze w XVII wieku (jak np. ci, którzy do Ameryki Północnej dotarli statku Mayflower - <a href="https://www.trzyameryki.pl/kultura/mayflower-opowiesc-recenzja/">książka opowiadająca o losach purytanów została już wcześniej zrecenzowana na tym blogu</a>). Historia lubi się powtarzać, więc tak jak i niecałe 200 lat wcześniej pionierzy musieli zmagać się z szeregiem wyzwań; pierwsi biali osadnicy Ohio często padali ofiarami chorób, nieszczęśliwych losowych wydarzeń czy wreszcie ginęli z rąk nie zawsze przyjaźnie nastawionych Indian.
