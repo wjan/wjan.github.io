@@ -1,3 +1,8 @@
+---
+layout: post
+title: Kuba - Miami. Ucieczki i powroty - recenzja książki
+---
+
 <b>W zeszłym miesiącu na polskim rynku wydawniczym ukazała się kolejna książka dotycząca Ameryki Łacińskiej. Tym razem jest to reportaż dotyczący Kuby i historii ludzi związanych ze współczesną historią tej wyspy. W moich planach podróżniczych Kuba rysuje się coraz wyraźniej, tym samym ochoczo przystąpiłem do lektury.</b>
 
 Karaibskie wydarzenia lat 50-tych XX wieku odcisnęły piętno na Kubie po dzień dzisiejszy. Przeprowadzona przez Fidela Castro komunistyczna rewolucja ustaliła kształt polityki na tropikalnej wyspie, decydując o życiu i losach setek tysięcy ludzi, dla których we wprowadzonym systemie miejsce nie zostało przewidziane. Beneficjenci poprzedniego ustroju, czyli tzw. "wrogowie rewolucji", uciśnieni i pozbawieni podstawowych praw człowieka zmuszeni zostali szukać godnego życia poza wyspą. Ze względu na położenie geograficzne Kubańczycy bardzo często szukali nowego życia u przyjaciela starego systemu, czyli w Stanach Zjednoczonych, a mówiąc bardziej precyzyjnie w położonym w stanie Floryda mieście Miami.

@@ -1,3 +1,8 @@
+---
+layout: post
+title: Mayflower. Opowieść o początkach Ameryki - recenzja książki
+---
+
 <b>Jak wyglądały początki Stanów Zjednoczonych? Jakimi motywami kierowali się pierwsi osadnicy? Dlaczego kolonizatorzy porzucili dotychczasowe życie, aby w niepewności rozpocząć je na nowo po drugiej stronie oceanu? Jak wyglądały stosunki z rdzennymi mieszkańcami Ameryki Północnej? </b>
 
 Popularyzowana u nas historia epoki odkryć nie mówi nam wiele więcej o Stanach Zjednoczonych poza Kolumbem, deklaracją niepodległości i wojną secesyjną. Tymczasem za samą kolonizacją Ameryki Północnej stali często zwykli ludzie, którzy ryzykując wszystko mozolnie układali życie na nowym kontynencie. W powszechnym mniemaniu nikt nie ma ich za bohaterów, a podbój dzisiejszych Stanów Zjednoczonych często postrzegany jest jako barbarzyński akt, który zaowocował prawie całkowitą anihilacją rdzennej ludności i niechlubną epoką niewolnictwa. Tymczasem prawda jest dużo bardziej skomplikowana, bo co tak naprawdę wiemy o pierwszych osadnikach i ich dziejach?
