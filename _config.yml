@@ -19,7 +19,7 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 footer-links:
   dribbble:
   email: kontakt@trzyameryki.pl
-  facebook:
+  facebook: backpackista
   flickr:
   github:
   instagram: trzyameryki
@@ -28,7 +28,7 @@ footer-links:
   rss: # just type anything here for a working RSS icon
   twitter: #jekyllrb
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
+  youtube: backpackista
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 
