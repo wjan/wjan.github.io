@@ -5,7 +5,9 @@ Couple of requirements that needs to be met for machine learning research and de
 * Fast and reliable general hardware setup
     * Plenty of ram
     * Fast SSD drive
+
 * Nvidia graphics card that could leverage CUDA capabilities thus increase neural networks processing speed
+
 * Right operating system
     * My choice is Linux based OS
     * I prefer Ubuntu due to ease of installation and use, wide support from many software vendors (such as Nvidia)
