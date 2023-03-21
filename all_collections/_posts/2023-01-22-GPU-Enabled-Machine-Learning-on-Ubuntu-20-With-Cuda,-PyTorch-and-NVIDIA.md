@@ -49,3 +49,7 @@ torch.cuda.get_device_name(0)
 In case of successfull installation your graphics card name would be printed after executing last command. In my case that is:
 
 > 'NVIDIA GeForce GT 1030'
+
+### 4. Further ML model specific configuration
+
+If you made to this step then you've successfully set up GPU in your CUDA environment. It doesn't neccesarilly mean that the ML models you'll run will have the GPU computing enabled by default though - configuring your ML models for the runtime will most probably requiring pointing to the specific computational unit (i.e. CPU or GPU). Providing this configuration value in your code may be necessary to fully leverage GPU in your environment. That's specific configuration related to certain ML framework and ML model and it's out of scope in this article but still, it's worth keeping in mind once you get into training and running specific models.
