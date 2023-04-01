@@ -13,9 +13,13 @@ The high level algorithm will consist of following steps:
 4. Match every object found using Yolo with a heatmap.  Object coordinates will be used to get the MiDaS depth.
 5. Show the image on a screen using 2D visualization graphics library.
 
-![alt text](https://github.com/wjan/wjan.github.io/tree/main/img/yolo.png?raw=true)
-![alt text](https://github.com/wjan/wjan.github.io/tree/main/img/midas.png?raw=true)
-![alt text](https://github.com/wjan/wjan.github.io/tree/main/img/molo.png?raw=true)
+https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/yolo.png
+https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/midas.png
+https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/molo.png
+
+![alt text](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/yolo.png)
+![alt text](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/midas.png)
+![alt text](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/molo.png)
 
 
 
