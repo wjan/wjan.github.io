@@ -14,9 +14,9 @@ The high level algorithm will consist of following steps:
 5. Show the image on a screen using 2D visualization graphics library.
 
 ## Screenshots
-[Yolo](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/yolo.png)
-[MiDaS](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/midas.png)
-[Yolo + MiDaS](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/molo.png)
+![Yolo](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/yolo.png)
+![MiDaS](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/midas.png)
+![Yolo + MiDaS](https://raw.githubusercontent.com/wjan/wjan.github.io/tree/main/img/molo.png)
 
 
 Problems 
