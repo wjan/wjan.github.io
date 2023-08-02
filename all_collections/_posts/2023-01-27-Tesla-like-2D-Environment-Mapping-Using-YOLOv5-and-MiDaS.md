@@ -1,6 +1,6 @@
 In this article I'll walk you through my first experiment related to environment object mapping using object detection and mono depth ML algorithms. Inspired with Tesla autopilot and Full Self Driving suites surroundings real time 3D visualization I'll try to recreate similar. 
 
-To simplyfi the process I'll work with a camera that is placed in my living room.
+To simplify the process I'll work with a camera that is placed in my living room.
 
 For the sake of this experiment I'll use two prebaked PyTorch models, both available on PyTorch hub:
 * Yolo v5: [https://pytorch.org/hub/ultralytics_yolov5/](https://pytorch.org/hub/ultralytics_yolov5/) - responsible for handling basic object detection, pretrained model can recognize multiple and general known object classes.
