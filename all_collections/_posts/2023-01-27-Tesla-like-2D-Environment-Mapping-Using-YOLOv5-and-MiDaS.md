@@ -3,8 +3,8 @@ In this article I'll walk you through my first experiment related to environment
 To simplyfi the process I'll work with a camera that is placed in my living room.
 
 For the sake of this experiment I'll use two prebaked PyTorch models, both available on PyTorch hub:
-* Yolo v5: https://pytorch.org/hub/ultralytics_yolov5/ - responsible for handling basic object detection, pretrained model can recognize multiple and general known object classes.
-* MiDaS: https://pytorch.org/hub/intelisl_midas_v2/ - responsible for monocular dept estimation, in oder words this ML model can estimate the distance from the camera to the object. The beauty of this model is that it works quite well despite of the fact it uses only single image (thus 2D vision instead of 3D vision).
+* Yolo v5: [https://pytorch.org/hub/ultralytics_yolov5/](https://pytorch.org/hub/ultralytics_yolov5/) - responsible for handling basic object detection, pretrained model can recognize multiple and general known object classes.
+* MiDaS: [https://pytorch.org/hub/intelisl_midas_v2/](https://pytorch.org/hub/intelisl_midas_v2/) - responsible for monocular dept estimation, in oder words this ML model can estimate the distance from the camera to the object. The beauty of this model is that it works quite well despite of the fact it uses only single image (thus 2D vision instead of 3D vision).
 
 In this experiment I'll try to combine both ML model in order to create 2D spacial map of objects found in an image or video. Some custom Python code will be written to tie the process together and visualize the 2D map of objects.
 
