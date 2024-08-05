@@ -91,7 +91,7 @@ main {
 .articles .article {
   padding: 2rem;
   background: var(--gray-3);
-  border-radius: 15px;
+  border-radius: 6px;
   transition: all 0.2s ease-in-out;
 }
 .articles .article .article-title,
@@ -120,7 +120,7 @@ main {
   display: block;
   color: var(--gray-4);
   background: var(--white-2);
-  border-radius: 15px;
+  border-radius: 6px;
   font-size: 0.7rem;
   padding: 0 0.8rem;
   line-height: 1.3rem;
