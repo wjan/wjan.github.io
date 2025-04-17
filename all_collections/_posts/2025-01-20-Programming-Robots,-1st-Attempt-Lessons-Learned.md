@@ -14,9 +14,8 @@ Several factors I've considered into buying this specific WI-FI RC car:
 * Price - around 60 USD
 * Aesthetics - looks quite decent compared to a lot of other options that seem more DIY like
 
-Given that I decided to order following RC car directly from China:
+Given that I decided to order [following RC car directly from China](https://pl.aliexpress.com/item/1005006722055337.html):
 
-** link **
 ** photo **
 
 **What I've received**
@@ -28,7 +27,7 @@ After a closer look I've quickly discovered there are some downsides to this che
 * The camera is prone to blur or jitter when IoT RC car is in move or rotating. That leads to problems for the further object detection algorithms 
 * The built in ESP32Cam PCB WI-FI camera is weak 
 * The built in ESP32Cam PCB WI-FI antenna has weak signal but (supposedly) you can attach an external antenna to improve it
-* Seems the IoT RC car firmware is sloppy, it doesn't always work as expected and it's just a Chinese spinoff of ![Pilot Hobbies software](https://pilothobbies.com/) which in order to flash it yourself you have to tinker with a lot (they don't provide the modified Pilot Software code, you have to work with the original one and adjust it for the IoT RC car)
+* Seems the IoT RC car firmware is sloppy, it doesn't always work as expected and it's just a Chinese spinoff of [Pilot Hobbies software](https://pilothobbies.com/) which in order to flash it yourself you have to tinker with a lot (they don't provide the modified Pilot Software code, you have to work with the original one and adjust it for the IoT RC car)
 
 **What I did**
 
