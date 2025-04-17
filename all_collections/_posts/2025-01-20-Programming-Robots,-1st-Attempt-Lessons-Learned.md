@@ -16,7 +16,7 @@ Several factors I've considered into buying this specific WI-FI RC car:
 
 Given that I decided to order [following RC car directly from China](https://pl.aliexpress.com/item/1005006722055337.html):
 
-** photo **
+![IoT RC car from China](https://raw.githubusercontent.com/wjan/wjan.github.io/main/rccar.jpeg)
 
 **What I've received**
 
