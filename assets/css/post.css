@@ -45,7 +45,6 @@ header {
 }
 main {
   margin: 0 auto;
-  /* max-width: 70%; */
   padding: 3rem 0 4rem 0;
 }
 .article {
@@ -216,8 +215,17 @@ main {
   border: 2px solid white;
 }
 
+@media screen and (min-width: 750px) {
+  main {
+    max-width: 70%;
+  }
+}
+
 @media screen and (max-width: 750px) {
   body {
     padding: 1.5rem;
+  }
+  main {
+    max-width: 100%;
   }
 }
