@@ -41,7 +41,7 @@ With little bit more work and ChatGPT help I was also able to retrieve the binar
 
 Given that I already had an access to both input (possibility to control) and the output (ability to see) of the IoT RC car/robot I was able to start applying the actual AI on top of it.
 
-Due to [my previous object detection experiences](esla-like-2D-Environment-Mapping-Using-YOLOv5-and-MiDaS/) I decided to use Yolo to process the image in order for the robot to understand the surroundings better. That way I could plan to create a simple AI based program for the basic seek-and-destroy algorithm.
+Due to [my previous object detection experiences](https://wjan.github.io/posts/tesla-like-2D-Environment-Mapping-Using-YOLOv5-and-MiDaS/) I decided to use Yolo to process the image in order for the robot to understand the surroundings better. That way I could plan to create a simple AI based program for the basic seek-and-destroy algorithm.
 Since ESP32Cam is very limited chip that can barely process video streaming at highest settings I needed to use my laptop as a platform for all the complex object detection processing. End of all, in the first phase of the experiments the POC will be run on the laptop which will basically retrieve video stream from the robot, process its frames in order to detect objects and then send commands back to the robot in order to move them into the desired direction.
 
 **What I've learned**
