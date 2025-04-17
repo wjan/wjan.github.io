@@ -28,7 +28,7 @@ After a closer look I've quickly discovered there are some downsides to this che
 * The camera is prone to blur or jitter when IoT RC car is in move or rotating. That leads to problems for the further object detection algorithms 
 * The built in ESP32Cam PCB WI-FI camera is weak 
 * The built in ESP32Cam PCB WI-FI antenna has weak signal but (supposedly) you can attach an external antenna to improve it
-* Seems the IoT RC car firmware is sloppy, it doesn't always work as expected and it's just a Chinese spinoff of Pilot Hobbies software (link) which in order to flash it yourself you have to tinker with a lot (they don't provide the modified Pilot Software code, you have to work with the original one and adjust it for the IoT RC car)
+* Seems the IoT RC car firmware is sloppy, it doesn't always work as expected and it's just a Chinese spinoff of ![Pilot Hobbies software](https://pilothobbies.com/) which in order to flash it yourself you have to tinker with a lot (they don't provide the modified Pilot Software code, you have to work with the original one and adjust it for the IoT RC car)
 
 **What I did**
 
@@ -46,5 +46,15 @@ Due to my previous object detection experiences (link) I decided to use Yolo to 
 Since ESP32Cam is very limited chip that can barely process video streaming at highest settings I needed to use my laptop as a platform for all the complex object detection processing. End of all, in the first phase of the experiments the POC will be run on the laptop which will basically retrieve video stream from the robot, process its frames in order to detect objects and then send commands back to the robot in order to move them into the desired direction.
 
 **What I've learned**
-...
+* As mentioned before - the ESP32Cam camera is of very poor quality. Using that with even a decent object detection model will not give you good results. Due to jitter, blur or just poor lightning the object detection model will not return correct prediction making the algorithm really unstable as many frames of the input video stream will not be resolved correctly thus the algorithm will not make good (or any) decision for the robot to take. 
+    * One way to overcome it is to move the robot sequentially (in other words - by taking little steps) only to grab the video frame while it's stopped - that way we can make sure that the video frame will be still and having the best possible quality. There's a downside here of course which is that such algorithm is really slow and it takes quite longer time to plan next move. Also due to this blur and jitter disruptions it's quite impossible to achieve fluid movement of the robot.
+    * Another way to overcome that would be to use another camera of better quality but it will not be suitable for ESP32Cam chip as whatever is shipped with it is almost as good as it gets. If I want to have a better camera on board then I should think of hooking up some other chip on top of the robot and there might be some options, such as Raspberry Pi with camera combination, as long as the car still has some energy left to lift and power it up. This seems to be preferred way as I at the end of the POC I won't be having the robot algorithm running externally on the laptop and I want the IoT RC car to be as autonomous as possible.
+* As also mentioned before - the software based on Pilot Hobbies Scout32 that is burned into the ESP32Cam chip have some bugs and it's sloppy. You can get your own open source version of Scout32 and modify using Arduino IDE which is an improvement, also the default access point mode being on the ESP32Cam by default can be switched into the client mode so the robot can connect into your WI-FI router directly instead you connecting into the robot.
+* Robot development seems to be more more healthy than general programming ;) You'll have to walk away from your laptop and chase or move the robot if it goes to far or collides with the objects in the room.
 
+**What's next**
+* This robot needs a better camera. What I need is better resolution, less jitter or blur. 
+* This robot needs a autonomous brain - possibly a Raspberry Pi and preferably one that can handle some kind of object detection algorithm that processes faster than 1 frame per second.
+* End of all - this robot needs to move fluidly and semi-intelligently while avoiding bumping into obstacles.
+
+**Only that much and that much**
