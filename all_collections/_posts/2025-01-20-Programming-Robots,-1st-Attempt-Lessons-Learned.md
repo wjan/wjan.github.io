@@ -34,9 +34,6 @@ After a closer look I've quickly discovered there are some downsides to this che
 After turning on the IoT RC car exposes an open WI-FI network (named Scout32, exactly as it's [original version from Pilot Code](https://www.pilothobbies.com/product/scout32/)) that you can connect into with your laptop or phone. Once connected you can access the 192.168.4.1 host that serves a Pilot Hobbies website showing you the video stream of the ESP32Cam camera and gives you some buttons to control the IoT RC car.
 
 Having that I've quickly extracted those HTTP call details that I was able to launch directly from the terminal using curl or Python.
-
-**curl example link**
-
 With little bit more work and ChatGPT help I was also able to retrieve the binary video stream from the ESP32Cam camera.
 
 Given that I already had an access to both input (possibility to control) and the output (ability to see) of the IoT RC car/robot I was able to start applying the actual AI on top of it.
