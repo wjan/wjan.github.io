@@ -3,7 +3,7 @@ This tutorial demonstrates how to use a Google Coral USB Accelerator alongside a
 Due to the Google Coral device dropping support for the latest development environments and the newest Raspbian OS images lacking support for Python 3.9 (the latest version compatible with Coral), setting up the device on modern systems can be difficult.
 Instead of compiling dependencies manually and dealing with mismatched versions, we’ll use an archival Raspbian image that still supports Python 3.9, simplifying the configuration process.
 
-**⚙️ System Compatibility and Notes**
+**System Compatibility and Notes**
 
 Tested on: Google Coral USB Accelerator (plastic case version)
 → Other Coral variants may also work.
