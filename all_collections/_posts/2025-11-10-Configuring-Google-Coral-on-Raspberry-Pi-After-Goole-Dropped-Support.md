@@ -1,24 +1,20 @@
 This tutorial demonstrates how to use a Google Coral USB Accelerator alongside a Raspberry Pi Zero 2W equipped with a Raspberry Pi Camera to perform edge-based image classification inference.
 
-Due to the Google Coral device dropping support for the latest development environments and the newest Raspbian OS images lacking support for Python 3.9 (the latest version compatible with Coral), setting up the device on modern systems can be difficult.
+Due to the [Google Coral device dropping support for the latest development environments](https://github.com/blakeblackshear/frigate/issues/10056) and the newest Raspbian OS images lacking support for Python 3.9 (the latest version compatible with Coral), setting up the device on modern systems can be difficult.
 Instead of compiling dependencies manually and dealing with mismatched versions, we’ll use an archival Raspbian image that still supports Python 3.9, simplifying the configuration process.
 
 **System Compatibility and Notes**
-
+Tested with OS version: raspios_full_arm64-2023-05-03
 Tested on: Google Coral USB Accelerator (plastic case version)
-→ Other Coral variants may also work.
-
+→ Other Coral variants may also work with library version edgetpu_runtime_20221024
 Tested with: Raspberry Pi Zero 2W (64-bit ARM, 4-core)
 → Should work on other Raspberry Pi models as well.
 
-Note: This setup uses a legacy OS version that may not receive security patches or updates.
+**Note: This setup uses a legacy OS version that may not receive security patches or updates.**
 
 **Step 1 — Prepare the Raspberry Pi OS Image**
-
 **1.1 Download the OS Image**
-
 Download the Raspberry Pi OS Full (64-bit, Bullseye) image that supports Python 3.9:
-
 ```
 https://downloads.raspberrypi.org/raspios_full_arm64/images/raspios_full_arm64-2023-05-03/2023-05-03-raspios-bullseye-arm64-full.img.xz
 ```
@@ -30,19 +26,16 @@ Apply custom settings (username, password, Wi-Fi configuration, etc.).
 Flash and verify.
 
 **1.3 Boot and Verify Python Version**
-
 Insert the SD card, boot your Raspberry Pi, and verify Python:
-
 ```
 python --version
 ```
 Ensure the output shows Python 3.9.x.
 
 **Step 2 — Install Edge TPU Runtime**
+[The official Coral setup guide](https://gweb-coral-full.uc.r.appspot.com/docs/accelerator/get-started/) recommends installing the Edge TPU runtime from the Debian repository, but since we’re using an older OS, we’ll manually install a compatible version.
 
-The official Coral setup guide recommends installing the Edge TPU runtime from the Debian repository, but since we’re using an older OS, we’ll manually install a compatible version.
-
-Run the following commands:
+To install compatible edgetpu library run following commands:
 ```
 wget https://github.com/google-coral/libedgetpu/releases/download/release-grouper/edgetpu_runtime_20221024.zip
 unzip edgetpu_runtime_20221024.zip
@@ -52,7 +45,6 @@ sudo ./install.sh
 When prompted, select “N” to disable the maximum frequency option.
 
 **Step 3 — Install Python Dependencies**
-
 Install the necessary Python packages, including the pycoral library, OpenCV, and a compatible NumPy version:
 ```
 python3 -m pip install --extra-index-url https://google-coral.github.io/py-repo/ pycoral~=2.0
@@ -61,7 +53,6 @@ pip install numpy==1.26.4
 ```
 
 **Step 4 — Testing the Setup**
-
 At this stage:
 Your Coral USB Accelerator should be connected.
 Your Raspberry Pi Camera should be detected by default by the system.
@@ -119,9 +110,28 @@ Execute the detection script:
 ```
 python detect.py
 ```
+And in the return no PI camera/Coral/inference or library errors should be present:
+```
+New frame results:
+21.09375% person
+
+New frame results:
+12.109375% person
+
+New frame results:
+16.015625% person
+12.109375% laptop
+```
+
+**5 Possible errors**
+One of the common errors is related to Coral USB device not connected properly:
+```
+...
+ValueError: Failed to load delegate from libedgetpu.so.1
+```
+One of the possible solutions might be reconnecting your Coral device while the OS running - it should pick it up automatically and the device should be visible for edgetpu library again.
 
 **Conclusion**
-
 You’ve successfully configured a Google Coral USB Accelerator with a Raspberry Pi Zero 2W to perform edge-based object detection using a legacy version of Raspberry Pi OS that supports Python 3.9.
 
 This setup enables you to perform real-time inference directly on-device, leveraging Coral’s Edge TPU performance even on lightweight Raspberry Pi hardware.
