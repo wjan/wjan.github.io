@@ -134,14 +134,14 @@ New frame results:
 12.109375% laptop
 ```
 
-**5 Possible errors**
+**Possible problems**
 
 One of the common errors is related to Coral USB device not connected properly:
 ```
 ...
 ValueError: Failed to load delegate from libedgetpu.so.1
 ```
-One of the possible solutions might be reconnecting your Coral device while the OS running - it should pick it up automatically and the device should be visible for edgetpu library again.
+Possible solution might be reconnecting your Coral device while the OS running - it should pick it up automatically and the device should be visible for edgetpu library again. 
 
 **Conclusion**
 
