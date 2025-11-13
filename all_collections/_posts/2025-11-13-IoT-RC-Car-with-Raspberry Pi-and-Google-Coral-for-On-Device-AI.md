@@ -10,7 +10,7 @@ Enter the **Raspberry Pi Zero 2 W** paired with a **Google Coral USB Accelerator
 
 This compact but powerful combo provided the computational muscle I needed for real-time inference — all packed into a surprisingly stable, improvised enclosure on top of the same RC car base.
 
-![Assembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/1.jpeg)
+![Assembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/1.jpg)
 
 ---
 
@@ -25,8 +25,8 @@ This compact but powerful combo provided the computational muscle I needed for r
 Despite sounding like an underpowered setup, the single small battery could drive the entire system — motors, compute modules, and Wi-Fi — for around **30 minutes** of runtime.  
 A more rigorous battery test still needs to be done, but the initial results were promising.
 
-![Disassembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/3.jpeg)
-![Disassembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/2.jpeg)
+![Disassembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/3.jpg)
+![Disassembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/2.jpg)
 ---
 
 ## Software & Control Architecture
@@ -136,7 +136,7 @@ I built two modes for running the software:
 - GUI Mode — includes a live preview and bounding box overlay; perfect for debugging and fine-tuning parameters, but more demanding on the network and battery.
 - CLI Mode — lightweight, headless mode that runs automatically on boot; ideal for extended tests and eventual “out-of-the-box” behavior.
 
-![GUI mode](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/4.jpeg)
+![GUI mode](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/4.png)
 
 Car speed, camera parameters, and model options are all configurable via command-line arguments, allowing quick tuning for performance versus stability.
 
