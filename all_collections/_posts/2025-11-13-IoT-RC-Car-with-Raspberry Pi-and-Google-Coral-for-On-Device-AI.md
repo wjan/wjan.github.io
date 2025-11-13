@@ -1,6 +1,6 @@
 # Motivation
 
-After the first proof of concept with the ESP32Cam Wi-Fi RC car, I realized the biggest bottlenecks were camera quality and computing power.  
+After the [first proof of concept with the ESP32Cam Wi-Fi RC car](https://wjan.github.io/posts/Programming-Robots,-1st-Attempt-Lessons-Learned/), I realized the biggest bottlenecks were camera quality and computing power.  
 The ESP32Cam is great for basic remote control and simple streaming, but its limited sensor, poor image quality, and weak processing capabilities made any real-time object detection nearly impossible.
 
 This naturally led me to the next step — giving the robot a proper **“brain”** and **“eyes.”**  
@@ -9,6 +9,8 @@ I wanted a system that could handle local object detection at decent frame rates
 Enter the **Raspberry Pi Zero 2 W** paired with a **Google Coral USB Accelerator**.  
 
 This compact but powerful combo provided the computational muscle I needed for real-time inference — all packed into a surprisingly stable, improvised enclosure on top of the same RC car base.
+
+![Assembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/1.jpeg)
 
 ---
 
@@ -23,8 +25,8 @@ This compact but powerful combo provided the computational muscle I needed for r
 Despite sounding like an underpowered setup, the single small battery could drive the entire system — motors, compute modules, and Wi-Fi — for around **30 minutes** of runtime.  
 A more rigorous battery test still needs to be done, but the initial results were promising.
 
-📸 *Photos of the setup would go here.*
-
+![Disassembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/3.jpeg)
+![Disassembled prototype](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/2.jpeg)
 ---
 
 ## Software & Control Architecture
@@ -54,6 +56,66 @@ This second-generation algorithm achieved surprisingly good results — the car 
 - The system has **simple short-term memory**: if detection is lost briefly (for up to 5 frames), it assumes the target is still nearby and doesn’t immediately switch to “spinning” mode.  
 - The algorithm currently doesn’t handle obstacle avoidance — that’s left for future iterations.
 
+Here's the full code for the algorithm leaving all the inference/technical details out of the scope as not needed:
+```
+  if person_object:
+    object_width, object_offset = get_object_dimenstions(person_object, image_dimensions)
+  
+    if state['mode'] == "spinning":
+      state['mode'] = "tracking"
+      car.car_control("stop")
+      print("^ (lock)")
+    state["person_lost_count"] = 0
+    if object_offset < TURN_ADJUSTMENT_OFFSET * -1:
+      car.car_control("left")
+      time.sleep(0.250)
+      car.car_control("stop")
+      state["last_direction"] = "left"
+      car.car_control("ahead")
+      print("< (adjust)")
+    elif object_offset > TURN_ADJUSTMENT_OFFSET:
+      car.car_control("right")
+      time.sleep(0.250)
+      car.car_control("stop")
+      state["last_direction"] = "right"
+      car.car_control("ahead")
+      print("> (adjust)")
+    else:
+      if object_width >= image_dimensions['frame_width'] * BACK_THRESHOLD:
+        car.car_control("back")
+        time.sleep(0.1)
+        car.car_control("stop")
+        print("V (lock back)")
+      elif object_width >= image_dimensions['frame_width'] * STOP_THRESHOLD:
+        car.car_control("stop")
+        print("_ (lock stop)")
+      else:
+        car.car_control("ahead")
+        print("^ (lock ahead)")
+
+      if object_offset < 0:
+        print("Remembering left")
+        state["last_direction"] = "left"
+      else:
+        print("Remembering right")
+        state["last_direction"] = "right"
+
+  else:
+    if state['mode'] == "tracking":
+      state["person_lost_count"] += 1
+      if state["person_lost_count"] > PERSON_LOST_FRAMES_THRESHOLD:
+        state['mode'] = "spinning"
+        car.car_control("stop")
+        car.car_control(state["last_direction"])
+        print(f"(Entering spinning mode) {state['last_direction']}")
+        print(f"? (dropping lock))")
+      else:
+        print(f"? (locked but lost {state['person_lost_count']}/{PERSON_LOST_FRAMES_THRESHOLD})")
+    elif state['mode'] == "spinning":
+      car.car_control(state["last_direction"])
+      print(f"(Spinning mode) {state['last_direction']}")
+```
+
 ### State Management
 
 ```python
@@ -74,15 +136,17 @@ I built two modes for running the software:
 - GUI Mode — includes a live preview and bounding box overlay; perfect for debugging and fine-tuning parameters, but more demanding on the network and battery.
 - CLI Mode — lightweight, headless mode that runs automatically on boot; ideal for extended tests and eventual “out-of-the-box” behavior.
 
+![GUI mode](https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/4.jpeg)
+
 Car speed, camera parameters, and model options are all configurable via command-line arguments, allowing quick tuning for performance versus stability.
 
 One note: as the battery voltage drops, the motors naturally slow down, which actually helps stabilization and inference quality.
 Increasing the speed parameter compensates for this, keeping motion consistent during longer runs.
-
+--
 ## Challenges Encountered
 - Camera Jitter	- Improved via lower motor speed, mechanical stabilization (taping modules together), and ESP32 firmware tweaks.
 - Wi-Fi Stability	- Generally solid, but long-range operation from the router can cause noticeable lag.
-- Google Coral Setup - Slightly painful due to deprecated official support; reused experience from the first article to get it running.
+- Google Coral Setup - Slightly painful due to deprecated official support; reused [experience from the first article](https://wjan.github.io/posts/Configuring-Deprecated-Google-Coral-on-Raspberry-Pi-With-Python-3.9/) to get it running.
 - Low Battery Behavior - As voltage drops, the Pi can reboot or corrupt the SD card — must monitor closely or use safe-shutdown scripts.
 - Parameter Tuning - Each hardware setup behaves differently; careful calibration was essential for balanced movement.
 - State Management - Eventually added simple state handling to stabilize behavior and prevent over-reacting to transient detection losses.
@@ -94,7 +158,7 @@ Increasing the speed parameter compensates for this, keeping motion consistent d
 - Upgraded Hardware — larger batteries, more stable chassis, improved camera angles (POV-style).
 - Sensors — ultrasonic or LiDAR modules for obstacle avoidance (though staying vision-only would be an interesting challenge).
 - Full Autonomy — move toward onboard-only control without external Wi-Fi or human intervention.
-
+---
 ## Summary
 
 This second version feels like a genuine success — not just a technical one but also creatively fulfilling.
