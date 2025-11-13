@@ -160,6 +160,8 @@ Increasing the speed parameter compensates for this, keeping motion consistent d
 - State Management - Eventually added simple state handling to stabilize behavior and prevent over-reacting to transient detection losses.
 - Battery Swapping - External chargers are a must for smooth testing — you can charge one cell while running on another.
 
+---
+
 ## Future Improvements Ideas
 - Enhanced State Machine — incorporate prediction and smarter decision-making.
 - Memory & Backtracking — remember last seen locations or paths.
