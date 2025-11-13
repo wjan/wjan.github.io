@@ -126,6 +126,12 @@ state = {
 }
 ```
 
+## Demo Video
+<video width="960" height="540" controls>
+  <source src="https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/vid.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 This minimalist state machine dramatically improved reliability.
 I initially resisted adding state to keep things simple, but it turned out essential for maintaining context between frames and avoiding erratic movements.
 
@@ -142,7 +148,9 @@ Car speed, camera parameters, and model options are all configurable via command
 
 One note: as the battery voltage drops, the motors naturally slow down, which actually helps stabilization and inference quality.
 Increasing the speed parameter compensates for this, keeping motion consistent during longer runs.
---
+
+---
+
 ## Challenges Encountered
 - Camera Jitter	- Improved via lower motor speed, mechanical stabilization (taping modules together), and ESP32 firmware tweaks.
 - Wi-Fi Stability	- Generally solid, but long-range operation from the router can cause noticeable lag.
@@ -158,7 +166,9 @@ Increasing the speed parameter compensates for this, keeping motion consistent d
 - Upgraded Hardware — larger batteries, more stable chassis, improved camera angles (POV-style).
 - Sensors — ultrasonic or LiDAR modules for obstacle avoidance (though staying vision-only would be an interesting challenge).
 - Full Autonomy — move toward onboard-only control without external Wi-Fi or human intervention.
+
 ---
+
 ## Summary
 
 This second version feels like a genuine success — not just a technical one but also creatively fulfilling.
