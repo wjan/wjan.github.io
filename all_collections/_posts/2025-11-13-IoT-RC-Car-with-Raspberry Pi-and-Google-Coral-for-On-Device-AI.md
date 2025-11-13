@@ -1,6 +1,4 @@
-# Experiment 2 — Upgrading the IoT RC Car with Raspberry Pi and Google Coral for On-Device AI
-
-## Motivation
+# Motivation
 
 After the first proof of concept with the ESP32Cam Wi-Fi RC car, I realized the biggest bottlenecks were camera quality and computing power.  
 The ESP32Cam is great for basic remote control and simple streaming, but its limited sensor, poor image quality, and weak processing capabilities made any real-time object detection nearly impossible.
@@ -9,6 +7,7 @@ This naturally led me to the next step — giving the robot a proper **“brain�
 I wanted a system that could handle local object detection at decent frame rates, communicate with the existing ESP32-based control system, and run autonomously without relying on my laptop.
 
 Enter the **Raspberry Pi Zero 2 W** paired with a **Google Coral USB Accelerator**.  
+
 This compact but powerful combo provided the computational muscle I needed for real-time inference — all packed into a surprisingly stable, improvised enclosure on top of the same RC car base.
 
 ---
@@ -68,42 +67,35 @@ state = {
 This minimalist state machine dramatically improved reliability.
 I initially resisted adding state to keep things simple, but it turned out essential for maintaining context between frames and avoiding erratic movements.
 
-GUI vs CLI Modes
+### GUI vs CLI Modes
 
 I built two modes for running the software:
 
-GUI Mode — includes a live preview and bounding box overlay; perfect for debugging and fine-tuning parameters, but more demanding on the network and battery.
-
-CLI Mode — lightweight, headless mode that runs automatically on boot; ideal for extended tests and eventual “out-of-the-box” behavior.
+- GUI Mode — includes a live preview and bounding box overlay; perfect for debugging and fine-tuning parameters, but more demanding on the network and battery.
+- CLI Mode — lightweight, headless mode that runs automatically on boot; ideal for extended tests and eventual “out-of-the-box” behavior.
 
 Car speed, camera parameters, and model options are all configurable via command-line arguments, allowing quick tuning for performance versus stability.
 
-💡 Fun fact:
-As the battery voltage drops, the motors naturally slow down, which actually helps stabilization and inference quality.
+One note: as the battery voltage drops, the motors naturally slow down, which actually helps stabilization and inference quality.
 Increasing the speed parameter compensates for this, keeping motion consistent during longer runs.
 
-Challenges Encountered
-Issue	Notes
-Camera Jitter	Improved via lower motor speed, mechanical stabilization (taping modules together), and ESP32 firmware tweaks.
-Wi-Fi Stability	Generally solid, but long-range operation from the router can cause noticeable lag.
-Google Coral Setup	Slightly painful due to deprecated official support; reused experience from the first article to get it running.
-Low Battery Behavior	As voltage drops, the Pi can reboot or corrupt the SD card — must monitor closely or use safe-shutdown scripts.
-Parameter Tuning	Each hardware setup behaves differently; careful calibration was essential for balanced movement.
-State Management	Eventually added simple state handling to stabilize behavior and prevent over-reacting to transient detection losses.
-Battery Swapping	External chargers are a must for smooth testing — you can charge one cell while running on another.
-Future Improvements
+## Challenges Encountered
+- Camera Jitter	- Improved via lower motor speed, mechanical stabilization (taping modules together), and ESP32 firmware tweaks.
+- Wi-Fi Stability	- Generally solid, but long-range operation from the router can cause noticeable lag.
+- Google Coral Setup - Slightly painful due to deprecated official support; reused experience from the first article to get it running.
+- Low Battery Behavior - As voltage drops, the Pi can reboot or corrupt the SD card — must monitor closely or use safe-shutdown scripts.
+- Parameter Tuning - Each hardware setup behaves differently; careful calibration was essential for balanced movement.
+- State Management - Eventually added simple state handling to stabilize behavior and prevent over-reacting to transient detection losses.
+- Battery Swapping - External chargers are a must for smooth testing — you can charge one cell while running on another.
 
-Enhanced State Machine — incorporate prediction and smarter decision-making.
+## Future Improvements Ideas
+- Enhanced State Machine — incorporate prediction and smarter decision-making.
+- Memory & Backtracking — remember last seen locations or paths.
+- Upgraded Hardware — larger batteries, more stable chassis, improved camera angles (POV-style).
+- Sensors — ultrasonic or LiDAR modules for obstacle avoidance (though staying vision-only would be an interesting challenge).
+- Full Autonomy — move toward onboard-only control without external Wi-Fi or human intervention.
 
-Memory & Backtracking — remember last seen locations or paths.
-
-Upgraded Hardware — larger batteries, more stable chassis, improved camera angles (POV-style).
-
-Sensors — ultrasonic or LiDAR modules for obstacle avoidance (though staying vision-only would be an interesting challenge).
-
-Full Autonomy — move toward onboard-only control without external Wi-Fi or human intervention.
-
-Summary
+## Summary
 
 This second version feels like a genuine success — not just a technical one but also creatively fulfilling.
 The RC car now reacts to its environment in real time, follows people intelligently, and runs a full AI inference pipeline onboard, all powered by a single small battery.
