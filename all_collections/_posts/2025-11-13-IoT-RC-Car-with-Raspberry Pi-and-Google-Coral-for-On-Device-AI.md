@@ -127,7 +127,7 @@ state = {
 ```
 
 ## Demo Video
-<video width="960" height="540" controls>
+<video width="540" height="960" controls>
   <source src="https://raw.githubusercontent.com/wjan/wjan.github.io/main/img/rc1/vid.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
