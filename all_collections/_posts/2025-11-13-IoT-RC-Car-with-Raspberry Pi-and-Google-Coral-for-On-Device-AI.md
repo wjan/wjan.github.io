@@ -61,45 +61,36 @@ Here's the full code for the algorithm leaving all the inference/technical detai
   if person_object:
     object_width, object_offset = get_object_dimenstions(person_object, image_dimensions)
   
+    state["person_lost_count"] = 0
     if state['mode'] == "spinning":
       state['mode'] = "tracking"
       car.car_control("stop")
-      print("^ (lock)")
-    state["person_lost_count"] = 0
     if object_offset < TURN_ADJUSTMENT_OFFSET * -1:
       car.car_control("left")
       time.sleep(0.250)
       car.car_control("stop")
       state["last_direction"] = "left"
       car.car_control("ahead")
-      print("< (adjust)")
     elif object_offset > TURN_ADJUSTMENT_OFFSET:
       car.car_control("right")
       time.sleep(0.250)
       car.car_control("stop")
       state["last_direction"] = "right"
       car.car_control("ahead")
-      print("> (adjust)")
     else:
       if object_width >= image_dimensions['frame_width'] * BACK_THRESHOLD:
         car.car_control("back")
         time.sleep(0.1)
         car.car_control("stop")
-        print("V (lock back)")
       elif object_width >= image_dimensions['frame_width'] * STOP_THRESHOLD:
         car.car_control("stop")
-        print("_ (lock stop)")
       else:
         car.car_control("ahead")
-        print("^ (lock ahead)")
 
       if object_offset < 0:
-        print("Remembering left")
         state["last_direction"] = "left"
       else:
-        print("Remembering right")
         state["last_direction"] = "right"
-
   else:
     if state['mode'] == "tracking":
       state["person_lost_count"] += 1
@@ -107,13 +98,8 @@ Here's the full code for the algorithm leaving all the inference/technical detai
         state['mode'] = "spinning"
         car.car_control("stop")
         car.car_control(state["last_direction"])
-        print(f"(Entering spinning mode) {state['last_direction']}")
-        print(f"? (dropping lock))")
-      else:
-        print(f"? (locked but lost {state['person_lost_count']}/{PERSON_LOST_FRAMES_THRESHOLD})")
     elif state['mode'] == "spinning":
       car.car_control(state["last_direction"])
-      print(f"(Spinning mode) {state['last_direction']}")
 ```
 
 ### State Management
